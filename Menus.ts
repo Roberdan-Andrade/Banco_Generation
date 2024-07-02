@@ -6,12 +6,16 @@ export function main() {
     let opcao: number;
 
     while (true) {
-
-        console.log("*****************************************************");
+        console.log(colors.bg.black, 
+                    "*****************************************************");
         console.log("                                                     ");
-        console.log("                BANCO DO BRAZIL COM Z                ");
+        console.log(colors.fg.red,
+                    "               BANCO THE OLDEST HOUSE                ");
+        console.log(colors.fg.gray,
+                    "                     (THE VAULT)                     ");
         console.log("                                                     ");
-        console.log("*****************************************************");
+        console.log(colors.reset,
+                    "*****************************************************");
         console.log("                                                     ");
         console.log("            1 - Criar Conta                          ");
         console.log("            2 - Listar todas as Contas               ");
@@ -30,7 +34,9 @@ export function main() {
         opcao = readlinesync.questionInt("");
 
         if (opcao == 9) {
-            console.log("\nBanco do Brazil com Z - O seu Futuro começa aqui!");
+            console.log(colors.fg.red,
+                        "\nBanco The Oldest House - O seu Futuro começa aqui!",
+                        colors.reset);
             sobre();
             process.exit(0);
         }
