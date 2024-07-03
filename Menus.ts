@@ -1,10 +1,17 @@
 import readlinesync = require("readline-sync");
 import { colors } from './src/util/Colors';
+import { Conta } from "./src/model/Conta";
 
 export function main() {
 
     let opcao: number;
 
+    //Criando novas instancias (objetos) da classe conta
+    const c1: Conta = new Conta(1, 123, 1, "Julia", 2500.00);
+    const c2: Conta = new Conta(2, 123, 2, "Marcela", 500.00);
+    const c3: Conta = new Conta(2, 123, 1, "Luis", 500.00);
+
+    //Iniciando loop do menu
     while (true) {
         console.log(colors.bg.black, 
                     "*****************************************************");
