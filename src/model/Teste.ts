@@ -1,29 +1,39 @@
 import { Conta } from "./Conta";
+import { ContaCorrente } from "./ContaCorrente";
+import { ContaPoupanca } from "./ContaPoupanca";
 
-//Teste Contas
+//Teste conta corrente
+    const cc1: ContaCorrente = new ContaCorrente(1, 123, 1, "Caio", 2000.00, 200.00);
+    const cc2: ContaCorrente = new ContaCorrente(2, 123, 1, "Maria", 5000.00, 500.00);
 
-//Criando novas instancias
-const conta1: Conta = new Conta(1, 123, 1, "Caio", 2000.00);
-const conta2: Conta = new Conta(2, 123, 1, "Guilherme", 5000.00);
-const conta3: Conta = new Conta(3, 123, 1, "Nix", 10000.00);
+    //Visualizar
+    cc1.visualizar();
+    console.log("\n----------\n");
 
-//Teste visualizar
-conta1.visualizar();
+    cc2.visualizar();
+    console.log("\n----------\n");
 
-console.log("---------");
+    //Sacar
+    cc1.sacar(2200.00);
+    cc2.sacar(10000.00);
 
-//Teste saque
-conta2.sacar(2000.00);
-conta3.sacar(50000.00);
+    cc1.visualizar();
+    console.log("\n----------\n");
 
-conta2.visualizar();
-conta3.visualizar();
+    cc2.visualizar();
+    console.log("\n----------\n");
+    
+    //Depositar
+    cc1.depositar(2500.00);
+    cc1.visualizar();
 
-console.log("---------");
+//Teste conta poupança
+    const cp1: ContaPoupanca = new ContaPoupanca(1, 123, 2, "Guilherme", 2500.00, 11);
+    const cp2: ContaPoupanca = new ContaPoupanca(1, 123, 2, "Luisa", 7500.00, 27);
 
-//Teste deposito
-conta1.depositar(500.00);
+    //visualizar
+    cp1.visualizar();
+    console.log("\n----------\n");
 
-conta1.visualizar();
-
-console.log("---------");
+    cp2.visualizar();
+    console.log("\n----------\n");
