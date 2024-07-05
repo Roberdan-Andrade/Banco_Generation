@@ -91,11 +91,11 @@ export abstract class Conta{
         console.log(`\n******************************`);
         console.log(`Dados da conta:`);
         console.log(`******************************\n`);
-        console.log(`Numero: ${this._numero}`);
-        console.log(`Agencia: ${this._agencia}`);
-        console.log(`Tipo: ${tipo}`);
-        console.log(`Titular: ${this._titular}`);
-        console.log(`Saldo: ${this._saldo.toFixed(2)}`);
+        console.log(`Numero da Conta: ${this._numero}`);
+        console.log(`Agencia da Conta: ${this._agencia}`);
+        console.log(`Tipo da Conta: ${tipo}`);
+        console.log(`Titular da Conta: ${this._titular}`);
+        console.log(`Saldo da Conta: ${this._saldo.toFixed(2)}`);
 
     }
 }
