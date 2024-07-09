@@ -25,7 +25,7 @@ export function main() {
 
     //Iniciando loop do menu
     while (true) {
-        console.log(colors.bg.black, 
+        console.log(colors.fg.blackstrong,
                     "*****************************************************");
         console.log("                                                     ");
         console.log(colors.fg.red,
@@ -33,9 +33,10 @@ export function main() {
         console.log(colors.fg.gray,
                     "                     (THE VAULT)                     ");
         console.log("                                                     ");
-        console.log(colors.reset,
+        console.log(colors.fg.blackstrong,
                     "*****************************************************");
-        console.log("                                                     ");
+        console.log(colors.reset,
+                    "                                                     ");
         console.log("            1 - Criar Conta                          ");
         console.log("            2 - Listar todas as Contas               ");
         console.log("            3 - Buscar Conta por Numero              ");
@@ -46,15 +47,17 @@ export function main() {
         console.log("            8 - Transferir valores entre Contas      ");
         console.log("            9 - Sair                                 ");
         console.log("                                                     ");
-        console.log("*****************************************************");
-        console.log("                                                     ");
+        console.log(colors.fg.blackstrong,
+                    "*****************************************************");
+        console.log(colors.reset,
+                    "                                                     ");
 
-        console.log("Entre com a opção desejada: ");
+        console.log(colors.fg.whitestrong,"Entre com a opção desejada: ",colors.reset);
         opcao = readlinesync.questionInt("");
 
         if (opcao == 9) {
             console.log(colors.fg.red,
-                        "\nBanco The Oldest House - O seu Futuro começa aqui!",
+                        "\nBanco The Oldest House - Bem-vindo ao departamento!",
                         colors.reset);
             sobre();
             process.exit(0);
@@ -62,7 +65,7 @@ export function main() {
 
         switch (opcao) {
             case 1:
-                console.log("\n\nCriar Conta\n\n");
+                console.log(colors.fg.red,"\n\nCriar Conta\n\n",colors.reset);
 
                 //Perguntas padrão
                 console.log(`Digite o Numero da Agencia: `);
@@ -95,14 +98,14 @@ export function main() {
                 break;
 
             case 2:
-                console.log("\n\nListar todas as Contas\n\n");
+                console.log(colors.fg.red,"\n\nListar todas as Contas\n\n",colors.reset);
                 contas.listarTodas();
                 keyPress()
 
                 break;
 
             case 3:
-                console.log("\n\nConsultar dados da Conta - por número\n\n");
+                console.log(colors.fg.red,"\n\nConsultar dados da Conta - por número\n\n",colors.reset);
                 console.log("Digite o numero da Conta: ");
                 numero = readlinesync.questionInt("");
 
@@ -112,37 +115,37 @@ export function main() {
                 break;
 
             case 4:
-                console.log("\n\nAtualizar dados da Conta\n\n");
+                console.log(colors.fg.red,"\n\nAtualizar dados da Conta\n\n",colors.reset);
                 keyPress()
 
                 break;
 
             case 5:
-                console.log("\n\nApagar uma Conta\n\n");
+                console.log(colors.fg.red,"\n\nApagar uma Conta\n\n",colors.reset);
                 keyPress()
 
                 break;
 
             case 6:
-                console.log("\n\nSaque\n\n");
+                console.log(colors.fg.red,"\n\nSaque\n\n",colors.reset);
                 keyPress()
 
                 break;
 
             case 7:
-                console.log("\n\nDepósito\n\n");
+                console.log(colors.fg.red,"\n\nDepósito\n\n",colors.reset);
                 keyPress()
 
                 break;
 
             case 8:
-                console.log("\n\nTransferência entre Contas\n\n");
+                console.log(colors.fg.red,"\n\nTransferência entre Contas\n\n",colors.reset);
                 keyPress()
 
                 break;
 
             default:
-                console.log("\nOpção Inválida!\n");
+                console.log(colors.fg.red,"\nOpção Inválida!\n",colors.reset);
                 keyPress()
 
                 break;
@@ -153,11 +156,15 @@ export function main() {
 
 //Função com os dados da pessoa desenvolvedora 
 export function sobre(): void {
-    console.log("\n*****************************************************");
-    console.log("Projeto Desenvolvido por: Roberdan Andrade");
+    console.log(colors.fg.blackstrong,
+                "\n*****************************************************");
+    console.log(colors.reset,
+                "Projeto Desenvolvido por: Roberdan Andrade");
     console.log("Generation Brasil - generation@generation.org");
     console.log("github.com/conteudoGeneration");
-    console.log("*****************************************************");
+    console.log(colors.fg.blackstrong,
+                "*****************************************************"
+                ,colors.reset);
 }
 
 //Função para pausar o codigo a cada execução do menu
