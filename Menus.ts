@@ -9,7 +9,7 @@ import { ContaController } from "./src/controller/ContaController";
 export function main() {
 
     let opcao, numero, agencia, tipo, saldo, limite, aniversario, valor, numeroDestino: number;
-    let titular: string;
+    let titular, nomeBusca: string;
 
     const tipoContas = ["Conta corrente", "Conta poupanca"];
 
@@ -40,12 +40,13 @@ export function main() {
         console.log("            1 - Criar Conta                          ");
         console.log("            2 - Listar todas as Contas               ");
         console.log("            3 - Buscar Conta por Numero              ");
-        console.log("            4 - Atualizar Dados da Conta             ");
-        console.log("            5 - Apagar Conta                         ");
-        console.log("            6 - Sacar                                ");
-        console.log("            7 - Depositar                            ");
-        console.log("            8 - Transferir valores entre Contas      ");
-        console.log("            9 - Sair                                 ");
+        console.log("            4 - Buscar Conta por Nome                ");
+        console.log("            5 - Atualizar Dados da Conta             ");
+        console.log("            6 - Apagar Conta                         ");
+        console.log("            7 - Sacar                                ");
+        console.log("            8 - Depositar                            ");
+        console.log("            9 - Transferir valores entre Contas      ");
+        console.log("            0 - Sair                                 ");
         console.log("                                                     ");
         console.log(colors.fg.blackstrong,
             "*****************************************************");
@@ -55,7 +56,7 @@ export function main() {
         console.log(colors.fg.whitestrong, "Entre com a opção desejada: ", colors.reset);
         opcao = readlinesync.questionInt("");
 
-        if (opcao == 9) {
+        if (opcao == 0) {
             console.log(colors.fg.red,
                 "\nBanco The Oldest House - Bem-vindo ao departamento!",
                 colors.reset);
@@ -117,6 +118,17 @@ export function main() {
                 break;
 
             case 4:
+                console.log(colors.fg.red, "\n\nConsultar dados da Conta - por nome\n\n", colors.reset);
+
+                console.log("Digite o nome do titular da Conta: ");
+                nomeBusca = readlinesync.question("");
+                contas.procurarPorTitular(nomeBusca);
+
+                keyPress()
+
+                break;
+
+            case 5:
                 console.log(colors.fg.red, "\n\nAtualizar dados da Conta\n\n", colors.reset);
 
                 console.log("Digite o numero da Conta: ");
@@ -157,7 +169,7 @@ export function main() {
 
                 break;
 
-            case 5:
+            case 6:
                 console.log(colors.fg.red, "\n\nApagar uma Conta\n\n", colors.reset);
 
                 console.log("Digite o numero da Conta: ");
@@ -168,7 +180,7 @@ export function main() {
 
                 break;
 
-            case 6:
+            case 7:
                 console.log(colors.fg.red, "\n\nSaque\n\n", colors.reset);
 
                 console.log("Digite o numero da Conta: ");
@@ -183,7 +195,7 @@ export function main() {
 
                 break;
 
-            case 7:
+            case 8:
                 console.log(colors.fg.red, "\n\nDepósito\n\n", colors.reset);
 
                 console.log("Digite o numero da Conta: ");
@@ -197,7 +209,7 @@ export function main() {
 
                 break;
 
-            case 8:
+            case 9:
                 console.log(colors.fg.red, "\n\nTransferência entre Contas\n\n", colors.reset);
 
                 console.log("Digite o numero da Conta de origem: ");

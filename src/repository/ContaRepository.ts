@@ -12,4 +12,7 @@ export interface ContaRepository{
     sacar(numero: number, valor: number): void;
     depositar(numero: number, valor: number): void;
     transferir(numeroOrigin: number, numeroDestino: number, valor: number): void;
+
+    //Extras
+    procurarPorTitular(titular: string): void;
 }
